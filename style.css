@@ -1,0 +1,161 @@
+/* --- สไตล์พื้นฐานของหน้าเว็บ --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* ช่วยให้คำนวณขนาดกล่องง่ายขึ้น */
+}
+
+body {
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+}
+
+/* --- 1. ตกแต่ง Navbar (แถบด้านบน) --- */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* จัดให้ โลโก้, ช่องค้นหา, เมนู อยู่ห่างกันซ้าย-กลาง-ขวา */
+    align-items: center; /* จัดให้อยู่กึ่งกลางแนวตั้ง */
+    background-color: #111111; /* สีดำดุดัน */
+    padding: 15px 40px;
+    position: sticky; /* ทำให้แถบเมนูติดอยู่ด้านบนสุดตลอดเวลาแม้จะเลื่อนหน้าจอ */
+    top: 0;
+    z-index: 100; /* อยู่เยื้องมาด้านหน้าสุด ไม่โดนส่วนอื่นบัง */
+}
+
+/* โลโก้ร้าน */
+.nav-logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ช่องค้นหาสินค้า */
+.nav-search {
+    display: flex;
+    width: 40%; /* ให้ช่องค้นหากว้าง 40% ของหน้าจอ */
+}
+
+.nav-search input {
+    width: 100%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px 0 0 6px; /* มนเฉพาะฝั่งซ้าย */
+    font-size: 14px;
+    outline: none;
+}
+
+.nav-search button {
+    padding: 10px 20px;
+    background-color: #ff4d4d; /* ปุ่มค้นหาสีแดงสะดุดตา */
+    color: white;
+    border: none;
+    border-radius: 0 6px 6px 0; /* มนเฉพาะฝั่งขวา */
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.nav-search button:hover {
+    background-color: #cc0000;
+}
+
+/* เมนูลิงก์ */
+.nav-menu {
+    display: flex;
+    list-style: none; /* เอาจุดกลมๆ หน้าลิสต์ออก */
+    align-items: center;
+}
+
+.nav-menu li {
+    margin-left: 25px; /* เว้นระยะห่างระหว่างเมนู */
+}
+
+.nav-menu a {
+    color: #cccccc;
+    text-decoration: none; /* เอาเส้นใต้ลิงก์ออก */
+    font-size: 16px;
+    transition: color 0.2s;
+}
+
+.nav-menu a:hover {
+    color: #ffffff; /* เวลาชี้ให้เปลี่ยนเป็นสีขาว */
+}
+
+/* ไฮไลต์พิเศษสำหรับตะกร้าสินค้า */
+.nav-menu .cart-link {
+    background-color: #333333;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: #ffffff;
+}
+
+.nav-menu .cart-link:hover {
+    background-color: #444444;
+}
+
+/* --- 2. ตกแต่งพื้นที่เนื้อหาหลัก --- */
+.main-content {
+    padding: 50px; /* เว้นระยะห่างรอบๆ เนื้อหาไม่ให้ติดขอบจอ */
+}
+
+/* --- 3. ตกแต่งการ์ดสินค้าชิ้นเดิม --- */
+.product-card {
+    background-color: #ffffff;
+    width: 300px;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.product-title {
+    font-size: 18px;
+    color: #333333;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    font-size: 22px;
+    color: #ff4d4d;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #111111;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #333333;
+}/* --- ตกแต่งป้ายโฆษณา (Hero Banner) --- */
+.hero-banner {
+    width: 100%; /* ให้กล่องแบนเนอร์กว้างเต็มหน้าจอ */
+    margin-bottom: 30px; /* เว้นระยะห่างจากแคตตาล็อกสินค้าด้านล่าง */
+}
+
+.banner-image {
+    width: 100%; /* สั่งให้รูปภาพขยายเต็มพื้นที่กล่อง */
+    height: auto; /* ปรับสัดส่วนความสูงอัตโนมัติตามหน้าจอ */
+    display: block; /* ลบรอยต่อหรือช่องว่างด้านล่างของรูปภาพ */
+    object-fit: cover; /* ป้องกันไม่ให้รูปภาพถูกบีบจนผิดสัดส่วน */
+}
